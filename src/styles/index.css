@@ -1,0 +1,55 @@
+@font-face {
+  font-family: Exo;
+  src: url(./fonts/exo-bold.woff2);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(./fonts/roboto-regular.woff2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Exo", sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+strong,
+br {
+  font-weight: bold;
+}

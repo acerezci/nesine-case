@@ -1,0 +1,10 @@
+$bg-color: #424242;
+
+.app-container {
+    background-color: $bg-color;
+    height: 100vh;
+
+    h1 {
+        color: red;
+    }
+}
