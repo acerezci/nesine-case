@@ -1,10 +1,12 @@
 import React from 'react';
 import '../styles/app.scss';
+import Header from './header';
+import Table from './table';
 
 const App = () => (
   <div className="app-container">
-    <div>Appjs</div>
-    <h1>TEST</h1>
+    <Header />
+    <Table />
   </div>
 );
 
