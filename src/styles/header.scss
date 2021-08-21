@@ -3,11 +3,11 @@ $header-height: 75px;
 $header-title-font-size: 2rem;
 
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: $header-height;
-    border-bottom: 1px solid $header-border-color;
-    font-size: $header-title-font-size;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $header-height;
+  border-bottom: 1px solid $header-border-color;
+  font-size: $header-title-font-size;
+  font-weight: bold;
 }

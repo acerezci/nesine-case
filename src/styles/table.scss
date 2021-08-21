@@ -5,49 +5,78 @@ $table-header-height: 40px + 5;
 $event-color: #ff0000;
 $index-color: #129817;
 $content-color: #070707;
-$content-font-size: 14px;
-$title-font-size: 15px;
 
 .table-item {
-    display: grid;
-    grid-template-columns: 3fr 1fr repeat(17, .45fr);
-    border-bottom: 1px solid $table-border-color;
-    height: $table-item-height;
+  display: grid;
+  grid-template-columns: 3fr 1fr repeat(17, 0.45fr);
+  border-bottom: 1px solid $table-border-color;
+  height: $table-item-height;
 
-    &.header {
-        height: $table-header-height;
-        background-color: $table-header-background-color;
-        position: sticky;
-        top: 0;
+  &.header {
+    height: $table-header-height;
+    background-color: $table-header-background-color;
+    position: sticky;
+    top: 0;
+  }
+
+  & > span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: $content-color;
+    font-size: 14px;
+
+    &:not(:last-child) {
+      border-right: 1px solid $table-border-color;
     }
 
-    & > span {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        color: $content-color;
-        font-size: $content-font-size;
+    &.title {
+      color: $event-color;
+      font-weight: bold;
+      font-size: 16px;
 
-        &:not(:last-child) {
-            border-right: 1px solid $table-border-color;
-        }
+      .index {
+        color: $index-color;
+        margin-right: 4px;
+        font-size: 16px;
+      }
+    }
+
+    &.match-info {
+      span:not(:last-child) {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .table-item {
+    grid-template-columns: 2fr 0.6fr repeat(17, 0.4fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .table {
+    &-container {
+      overflow-x: scroll;
+    }
+
+    &-item {
+      grid-template-columns: 160px 55px repeat(17, 40px);
+      width: max-content;
+
+      & > span {
+        font-size: 13px;
 
         &.title {
-            color: $event-color;
-            font-weight: bold;
-            font-size: $title-font-size;
+          font-size: 14px;
 
-            .index {
-                color: $index-color;
-                margin-right: 4px;
-                font-size: $title-font-size;
-            }
+          .index {
+            font-size: 14px;
+          }
         }
-
-        &.match-info {
-            span:not(:last-child) {
-                margin-right: 8px;
-            }
-        }
+      }
     }
+  }
 }
