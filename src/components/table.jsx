@@ -31,6 +31,7 @@ const Table = () => {
     <div className="table-container">
       <TableHeader title={`Event Count:${events.length}`} isFirstElement />
       {events.slice(0, currentPage * perPage).map((event, index) => {
+        const staticVariable = 4;
         const matchResult = {
           host: {
             rate: event.OCG[1].OC[0].O,
@@ -79,10 +80,10 @@ const Table = () => {
           <React.Fragment key={`${event.NID}-${event.ESD}`}>
             <TableHeader title={`${event.D} ${event.DAY} ${event.LN}`} index={index} />
             <TableItem
-              matchYear={event.C}
+              matchCode={event.C}
               matchTime={event.T}
               matchInfo={event.N}
-              staticVariable="4"
+              staticVariable={staticVariable}
               matchResult={matchResult}
               lowerUpperResult={lowerUpperResult}
               doubleResult={doubleResult}

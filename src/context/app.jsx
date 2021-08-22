@@ -13,7 +13,7 @@ export const AppContextProvider = ({ children, data }) => {
 
   const addToCart = (item) => {
     const sameGroupIndex = cart
-      .findIndex((_item) => item.id === _item.id && item.matchYear === _item.matchYear);
+      .findIndex((_item) => item.id === _item.id && item.matchCode === _item.matchCode);
 
     if (sameGroupIndex > -1) {
       cart.splice(sameGroupIndex, 1);

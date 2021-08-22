@@ -6,7 +6,7 @@ const doubleResulstType = '2';
 const upperLowerResulstType = '5';
 
 const TableItem = ({
-  matchYear,
+  matchCode,
   matchTime,
   matchInfo,
   staticVariable,
@@ -21,12 +21,12 @@ const TableItem = ({
 
   const match = {
     matchInfo,
-    matchYear,
+    matchCode,
     staticVariable,
   };
 
   const actionToCart = (matchItem, index) => {
-    const action = cart.findIndex((item) => item.matchYear === matchItem.matchYear
+    const action = cart.findIndex((item) => item.matchCode === matchItem.matchCode
         && item.rate === matchItem.rate
         && item.id === matchItem.id);
 
@@ -56,7 +56,7 @@ const TableItem = ({
   return (
     <div className="table-item">
       <span className="match-info">
-        <span>{matchYear}</span>
+        <span>{matchCode}</span>
         <span>{matchTime}</span>
         <span>{matchInfo}</span>
       </span>
