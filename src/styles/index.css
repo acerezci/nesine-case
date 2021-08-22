@@ -21,6 +21,10 @@ body {
   font-size: 1rem;
 }
 
+canvas {
+  display: none;
+}
+
 input {
   font-family: inherit;
   font-size: inherit;

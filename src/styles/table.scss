@@ -6,6 +6,7 @@ $table-header-height: 40px + 5;
 $event-color: #ff0000;
 $index-color: #129817;
 $content-color: #070707;
+$active-background-color: #ffeb30;
 
 .table-item {
   display: grid;
@@ -34,6 +35,10 @@ $content-color: #070707;
 
     &:not(:last-child) {
       border-right: 1px solid $table-border-color;
+    }
+
+    &.active {
+      background-color: $active-background-color;
     }
 
     &.title {
