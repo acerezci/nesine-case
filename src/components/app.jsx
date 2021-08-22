@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/app.scss';
 import Header from './header';
 import Table from './table';
+import '../styles/app.scss';
 
 const App = () => (
   <div className="app-container">

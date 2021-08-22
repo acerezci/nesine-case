@@ -31,11 +31,12 @@ const TableHeader = ({ title, isFirstElement, index }) => (
 TableHeader.propTypes = {
   title: PropTypes.string.isRequired,
   isFirstElement: PropTypes.bool,
-  index: PropTypes.string.isRequired,
+  index: PropTypes.number,
 };
 
 TableHeader.defaultProps = {
   isFirstElement: false,
+  index: undefined,
 };
 
 export default React.memo(TableHeader);

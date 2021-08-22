@@ -1,6 +1,7 @@
-$table-border-color: #3e3e3e;
-$table-header-background-color: #cecece;
+$table-border-color: #363636;
+$table-header-background-color: #bbbbbb;
 $table-item-height: 40px;
+$table-item-even-background-color: #cecece;
 $table-header-height: 40px + 5;
 $event-color: #ff0000;
 $index-color: #129817;
@@ -11,6 +12,11 @@ $content-color: #070707;
   grid-template-columns: 3fr 1fr repeat(17, 0.45fr);
   border-bottom: 1px solid $table-border-color;
   height: $table-item-height;
+  cursor: pointer;
+
+  &:nth-child(even) {
+    background-color: $table-item-even-background-color;
+  }
 
   &.header {
     height: $table-header-height;
