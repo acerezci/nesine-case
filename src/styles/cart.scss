@@ -6,21 +6,20 @@ $cart-border-color: #414141;
 
 .cart {
     &-container {
-        position: sticky;
+        position: fixed;
         bottom: 0;
-        left: 0;
+        right: 0;
     }
 
     &-content {
-        box-sizing: border-box;
         width: $cart-width;
         height: $cart-height;
         max-height: $cart-max-height;
         background-color: $cart-background-color;
         border: 2px solid $cart-border-color;
-        margin-left: auto;
         padding: 12px;
-        overflow-y: scroll;
+        overflow-y: auto;
+        position: relative;
 
         .item {
             border-bottom: 1px solid $cart-border-color;

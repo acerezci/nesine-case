@@ -27,18 +27,6 @@ const TableItem = ({
   };
 
   const actionToCart = (matchItem, index) => {
-    const action = cart.findIndex((item) => item.matchCode === matchItem.matchCode
-      && item.rate === matchItem.rate
-      && item.id === matchItem.id);
-
-    if (action > -1) {
-      deleteItem(action);
-
-      return;
-    }
-
-    addToCart(matchItem);
-
     switch (matchItem.id) {
       case matchResulstType:
         setMatchActive((prev) => (prev === index ? '' : index));
@@ -52,6 +40,18 @@ const TableItem = ({
       default:
         break;
     }
+
+    const action = cart.findIndex((item) => item.matchCode === matchItem.matchCode
+      && item.rate === matchItem.rate
+      && item.id === matchItem.id);
+
+    if (action > -1) {
+      deleteItem(action);
+
+      return;
+    }
+
+    addToCart(matchItem);
   };
 
   return (
