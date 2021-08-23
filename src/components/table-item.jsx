@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useAppContext } from '../context/app';
 
 const matchResulstType = '1';
@@ -27,8 +28,8 @@ const TableItem = ({
 
   const actionToCart = (matchItem, index) => {
     const action = cart.findIndex((item) => item.matchCode === matchItem.matchCode
-        && item.rate === matchItem.rate
-        && item.id === matchItem.id);
+      && item.rate === matchItem.rate
+      && item.id === matchItem.id);
 
     if (action > -1) {
       deleteItem(action);
@@ -82,6 +83,32 @@ const TableItem = ({
       <span>3</span>
     </div>
   );
+};
+
+const itemType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  mbs: PropTypes.string.isRequired,
+  rate: PropTypes.string.isRequired,
+});
+
+TableItem.propTypes = {
+  matchCode: PropTypes.string.isRequired,
+  matchTime: PropTypes.string.isRequired,
+  matchInfo: PropTypes.string.isRequired,
+  staticVariable: PropTypes.number.isRequired,
+  matchResult: PropTypes.shape({
+    draw: PropTypes.shape(itemType.isRequired).isRequired,
+    host: PropTypes.shape(itemType.isRequired).isRequired,
+  }).isRequired,
+  lowerUpperResult: PropTypes.shape({
+    lower: PropTypes.shape(itemType.isRequired).isRequired,
+    upper: PropTypes.shape(itemType.isRequired).isRequired,
+  }).isRequired,
+  doubleResult: PropTypes.shape({
+    x1: PropTypes.shape(itemType.isRequired).isRequired,
+    x12: PropTypes.shape(itemType.isRequired).isRequired,
+    x2: PropTypes.shape(itemType.isRequired).isRequired,
+  }).isRequired,
 };
 
 export default React.memo(TableItem);

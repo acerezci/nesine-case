@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const AppContext = React.createContext({ cart: [] });
 export const useAppContext = () => React.useContext(AppContext);
@@ -29,4 +30,9 @@ export const AppContextProvider = ({ children, data }) => {
   };
 
   return <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>;
+};
+
+AppContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+  data: PropTypes.arrayOf(PropTypes.array).isRequired,
 };

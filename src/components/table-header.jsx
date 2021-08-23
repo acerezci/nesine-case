@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const TableHeader = ({ title, isFirstElement, index }) => (
   <div className={`table-item ${isFirstElement ? 'header' : ''}`}>
@@ -26,5 +27,16 @@ const TableHeader = ({ title, isFirstElement, index }) => (
     <span>+99</span>
   </div>
 );
+
+TableHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  isFirstElement: PropTypes.bool,
+  index: PropTypes.number,
+};
+
+TableHeader.defaultProps = {
+  isFirstElement: false,
+  index: undefined,
+};
 
 export default React.memo(TableHeader);

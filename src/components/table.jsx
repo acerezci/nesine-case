@@ -1,8 +1,8 @@
 import React from 'react';
 import data from '../data/data.json';
 import TableHeader from './table-header';
-import '../styles/table.scss';
 import TableItem from './table-item';
+import '../styles/table.scss';
 
 const events = Object.values(data.Events);
 

@@ -10,7 +10,7 @@ const Cart = () => {
     <div className="cart-container">
       <div className="cart-content">
         {cart?.map((item) => (
-          <div key={`${item.id}-${item.rate}-${item.matchCode}`} className="item">
+          <div data-testid="cart-item" key={`${item.id}-${item.rate}-${item.matchCode}`} className="item">
             <span>{item.staticVariable}</span>
             <span>
               Kod:
